@@ -4,7 +4,7 @@
  * main -print letters of the alphabet
  * Return: always (success)
 */
-int main()
+int main(void)
 {
 	char c;
 
