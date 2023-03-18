@@ -6,7 +6,7 @@
 int main(void)
 {
 	int i;
-	char c;
+	char n;
 
 	n = "\n";
 	for (i = 0; i < 10; i++)
