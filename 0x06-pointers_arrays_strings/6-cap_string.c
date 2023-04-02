@@ -8,28 +8,27 @@
  **/
 char *cap_string(char *s)
 {
-	int count = 0;
-	char prev;
+	int capitalize_next = 1;
 	int i;
-	int is_word_start;
 
-	while (s[count] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		count++;
-	}
-	for (i = 0; i < count; i++)
-	{
+		if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == ',' || s[i] == ';' || s[i] == '.' || s[i] == '!' || s[i] == '?' || s[i] == '"' || s[i] == '(' || s[i] == ')' || s[i] == '{' || s[i] == '}')
+		{
+			capitalize_next = 1;
+			continue;
+		}
 		if (s[i] >= 97 && s[i] <= 122)
 		{
-			prev = s[i - 1];
-			is_word_start = (i == 0 || (prev >= 9 && prev <= 13) || prev == 32
-					 || prev == 33 || prev == 34 || prev == 40 || prev == 41 ||
-					 prev == 46 || prev == 59 || prev == 63 || prev == 123
-					 || prev == 125) ? 1 : 0;
-			if (is_word_start == 1)
+			if (capitalize_next)
 			{
-				s[i] = (int)(s[i]) - 32;
+				s[i] -= 32;
+				capitalize_next = 0;
 			}
+		}
+		else
+		{
+			capitalize_next = 0;
 		}
 	}
 	return (s);
