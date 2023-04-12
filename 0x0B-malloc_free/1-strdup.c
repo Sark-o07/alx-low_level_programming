@@ -10,17 +10,17 @@
  *Return: a pointer to the duplicated string.
  *It returns NULL if insufficient memory was available
 **/
-char *_strdup(char *s)
+char *_strdup(char *str)
 {
-	int i, len = strlen(s);
+	int i, len = strlen(str);
 	char *new_string;
 
-	if (*s == NULL)
+	if (str == (NULL))
 		return (NULL);
 	new_string = (char *) malloc((len + 1) * sizeof(char));
 	if (new_string == NULL)
 		return (NULL);
 	for (i = 0; i < len; i++)
-		new_string[i] = s[i];
+		new_string[i] = str[i];
 	return (new_string);
 }
