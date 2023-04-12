@@ -6,7 +6,7 @@
  *to a 2 dimensional array of integers
  *@width: the size of the column
  *@height: the size of the row
- *return: a pointer to the 2D array
+ *Return: a pointer to the 2D array
  **/
 int **alloc_grid(int width, int height)
 {
