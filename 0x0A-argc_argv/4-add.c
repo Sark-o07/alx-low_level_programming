@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - prints the command name
  *@argc: the size of an array argv
@@ -9,15 +10,18 @@
  **/
 int main(int argc, char *argv[])
 {
-	int result = 0, i = 1;
+	int j, result = 0, i = 1;
+	char *pointr; /**n address to store the +ve num args**/
 
 	for (; i < argc; i++)
 	{
-		if (*argv[i] < 48 || *argv[i] > 57)
-		{
-			printf("Error\n");
-			return (1);
-		}
+		pointr = argv[i]; /**storing the +ve num args**/
+		for (j = 0; pointr[j] != '\0'; j++)
+			if (!isdigit(pointr[j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		result += atoi(argv[i]);
 	}
 	printf("%d\n", result);
