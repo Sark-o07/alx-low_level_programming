@@ -1,6 +1,12 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+/**
+ * main - prints the result of math op
+ *@argc: number of args passed
+ *@argv: an array of pointers to the argument
+ *Return: the result of the chosen math operation
+ **/
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int num1, num2;
@@ -8,7 +14,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error0\n");
+		printf("Error\n");
 		exit(98);
 	}
 
@@ -18,13 +24,13 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	if (get_op_func(op) == NULL)
 	{
-		printf("Error1\n");
+		printf("Error\n");
 		exit(99);
 	}
 
 	if ((*op == '/' || *op == '%') && num2 == 0)
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		exit(100);
 	}
 
