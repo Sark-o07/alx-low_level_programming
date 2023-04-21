@@ -16,7 +16,7 @@ int sum_them_all(const unsigned int n, ...)
 	if (n == 0)
 		return (0);
 
-	≈ß≈çfor (i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		elem = va_arg(num_list, int);
 		sum += elem;
