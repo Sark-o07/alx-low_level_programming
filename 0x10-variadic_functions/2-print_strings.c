@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "variadic_functions.h"
 /**
  * print_strings - output string
