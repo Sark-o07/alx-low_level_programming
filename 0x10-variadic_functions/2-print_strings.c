@@ -22,11 +22,11 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (j = 0; j < n; j++)
 	{
 		arr = va_arg(arr_list, char *);
-		if (arr == NULL)
-			arr = "nil";
+		if (arr == NULL || *arr == '\0')
+			printf("(nil)");
 		else
 			printf("%s", arr);
-		if (separator != NULL && j != n -1)
+		if (separator != NULL && j != n - 1)
 			printf("%s", separator);
 	}
 	printf("\n");
