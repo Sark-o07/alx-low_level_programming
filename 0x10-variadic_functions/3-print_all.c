@@ -33,7 +33,7 @@ void print_all(const char * const format, ...)
 			case 's':
 				arr = va_arg(lst, char *);
 				if (!arr)
-					str = "(nil)";
+					arr = "(nil)";
 				printf("%s%s", separator, arr);
 				break;
 			default:
@@ -44,4 +44,5 @@ void print_all(const char * const format, ...)
 			i++;
 		}
 	}
+printf("\n");
 }
