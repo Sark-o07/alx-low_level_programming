@@ -14,18 +14,20 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list arr_list;
 
 	va_start(arr_list, n);
-
+	if (n == 0)
+	{
+		printf("\n");
+		return;
+	}
 	for (j = 0; j < n; j++)
 	{
 		arr = va_arg(arr_list, char *);
-		if (!arr)
+		if (arr == NULL)
 			arr = "nil";
-		if (!separator)
-			printf("%s", arr);
-		else if (separator && j == 0)
-			printf("%s", arr);
 		else
-			printf("%s%s", separator, arr);
+			printf("%s", arr);
+		if (separator != NULL && j != n -1)
+			printf("%s", separator);
 	}
 	printf("\n");
 	va_end(arr_list);
