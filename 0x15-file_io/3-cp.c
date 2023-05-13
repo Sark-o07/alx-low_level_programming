@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 			free(arr);
 			exit(99);
 		}
-		r = read(from, buffer, 1024);
+		r = read(fro, arr, SIZE);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 	} while (r > 0);
 	free(arr);
