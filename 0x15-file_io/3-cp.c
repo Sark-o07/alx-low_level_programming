@@ -58,20 +58,24 @@ int main(int argc, char *argv[])
 	fro = open(argv[1], O_RDONLY);
 	r = read(fro, arr, SIZE);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fro == -1 || r == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		free(arr);
-		exit(98);
-	}
+	do {
+		if (fro == -1 || r == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			free(arr);
+			exit(98);
+		}
 
-	w = write(to, arr, SIZE);
-	if (to == -1 || w == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		free(arr);
-		exit(99);
-	}
+		w = write(to, arr, SIZE);
+		if (to == -1 || w == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			free(arr);
+			exit(99);
+		}
+		r = read(from, buffer, 1024);
+		to = open(argv[2], O_WRONLY | O_APPEND);
+	} while (r > 0);
 	free(arr);
 	_close(fro);
 	_close(to);
