@@ -24,3 +24,4 @@ void print_binary(unsigned long int n)
 	}
 	if (totale == 0)
 		_putchar('0');
+}
