@@ -7,11 +7,11 @@
  **/
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t file, lenght = 0, wr;
+	int file, lenght = 0, wr;
 
 	if (filename == NULL)
 		return (-1);
-	if (text != NULL)
+	if (text_content != NULL)
 	{
 		while (text_content[lenght])
 			lenght++;
