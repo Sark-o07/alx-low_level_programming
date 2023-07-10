@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		w = write(to, arr, SIZE);
+		w = write(to, arr, r);
 		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
