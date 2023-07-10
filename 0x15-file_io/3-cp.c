@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	arr = tray(argv[2]);
 	fro = open(argv[1], O_RDONLY);
 	r = read(fro, arr, SIZE);
-	to = open(argv[2], 0_CREAT | O_WRONLY | O_TRUNC, 0664);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	do {
 		if (fro == -1 || r == -1)
 		{
