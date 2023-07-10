@@ -10,8 +10,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t file;
 	ssize_t c;
 	ssize_t d;
+	char *buffer;
 
-	file = fopen(filename, O_RDONLY);
+	file = open(filename, O_RDONLY);
 
 	if (file == -1)
 		return (0);
